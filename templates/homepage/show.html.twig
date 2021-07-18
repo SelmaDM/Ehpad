@@ -1,0 +1,37 @@
+{% extends 'public/layout.html.twig' %}
+
+{% block title %}
+  Homepage
+{% endblock %}
+
+{% block body %}
+  <h1> Homepage</h1>
+
+  <table class="table">
+    <tbody>
+      <tr>
+        <th>Id </th>
+        <td>{{ homepage.id }} </td>
+      </tr>
+      <tr>
+        <th> Title </th>
+        <td> {{ homepage.title }}</td>
+      </tr>
+      <tr>
+        <th> Text </th>
+        <td> {{ homepage.text }}</td>
+      </tr>
+      <tr>
+        <th> TextAbout
+        </th>
+        <td> {{ homepage.textAbout }} </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a href="{{ path('homepage_index') }}">back to list</a>
+
+  <a href="{{path('homepage_edit', { id: homepage.id })}}"> edit  </a>
+
+  {{ include('homepage/_delete_form.html.twig') }}
+{% endblock %}

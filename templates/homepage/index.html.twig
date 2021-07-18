@@ -1,0 +1,41 @@
+{% extends 'public/layout.html.twig' %}
+
+{% block title %}
+  Homepage
+{% endblock %}
+
+{% block body %}
+ 
+  <!-- section -->
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="full text_align_right_img">
+            <img src="{{ asset('images/img1.png') }}" alt="#" />
+          </div>
+        </div>
+        <div class="col-md-6 layout_padding">
+          <div class="full paddding_left_15">
+            <div class="heading_main text_align_left">
+              <h2>
+                <span class="theme_color"> Bienvenue</span> à notre résidence
+              </h2>
+            </div>
+          </div>
+          <div class="full paddding_left_15">
+            <p>
+             Vivez votre retraitre dans un cadre de vie de qualité en maitrisant votre budget. Optez pour un lieu de vie pensé et adpaté aux besoins qui favorise l'autonomie des seniors. Balcon Privatif. Sécurisé Et Adapté. Appartement Meublé. Cadre Chaleureux.
+            </p>
+          </div>
+          <div class="full paddding_left_15">
+            <a class="main_bt" href="#">Plus ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end section -->
+
+  <!-- end section -->
+{% endblock %}

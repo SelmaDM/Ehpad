@@ -1,0 +1,30 @@
+{% extends 'espace-client/layout.html.twig' %}
+
+{% block title %}Souscription{% endblock %}
+
+{% block body %}
+    <h1>Souscription</h1>
+ <table class="table">
+        <thead>
+            <tr>
+                <th>Offre</th>
+                <th>Etat</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for offer in souscription %}
+            <tr>
+                <td>{{ offer.offer.titre}}</td>
+                <td>{{ offer.etat }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5"> Aucune Offre trouvée </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+       <a href="{{ path('offer_index') }}">Retourner à la liste</a>
+
+   
+{% endblock %}

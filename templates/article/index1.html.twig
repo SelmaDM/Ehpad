@@ -1,0 +1,42 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Article index{% endblock %}
+
+{% block body %}
+<div class="heading_main text_align_center">
+    <h2>Liste  d'articles </h2>
+</div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Numéro d'article</th>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Date de création</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.content }}</td>
+                <td>{{ article.created ? article.created|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('article_show', {'id': article.id}) }}">Afficher</a>
+                    <a href="{{ path('article_edit', {'id': article.id}) }}">Modifier</a>
+                      {{ include('article/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">aucun article trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('article_new') }}"> Nouvel Article </a>
+{% endblock %}

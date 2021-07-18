@@ -1,0 +1,24 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}
+  Modifier article
+{% endblock %}
+
+{% block body %}
+  <h1>
+    Modifier article
+  </h1>
+
+  {{
+    include(
+      'article/_form.html.twig',
+      {
+        button_label: 'Mise à jour'
+      }
+    )
+  }}
+
+  <a href="{{ path('article_index') }}">Retourner à la liste</a>
+
+  {{ include('article/_delete_form.html.twig') }}
+{% endblock %}

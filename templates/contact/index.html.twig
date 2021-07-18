@@ -1,0 +1,40 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}
+  Liste contact
+{% endblock %}
+
+{% block body %}
+<div class="heading_main text_align_center">
+<h2><span class="theme_color"></span>Liste de contacts</h2>
+</div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Date de création </th>
+        <th> Nom </th>
+        <th> Email </th>
+        <th> Objet </th>
+        <th> Message </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for contact in contacts %}
+        <tr>
+          <td>{{ contact.created|date('d/m/Y') }}</td>
+          <td> {{ contact.Nom }} </td>
+          <td> {{ contact.Email }} </td>
+          <td> {{ contact.Objet }} </td>
+          <td>{{ contact.Message }} </td>
+          
+        </tr>
+      {% else %}
+        <tr>
+          <td colspan="6"> Aucun contact trouvé </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

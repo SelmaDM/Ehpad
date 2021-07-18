@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+
+<!-- End header -->
+<header class="top-header fixed-top">
+    <div class="header_top">
+
+        <div class="container">
+            <div class="row">
+                <div class="logo_section">
+                    {% block logo %}
+                        <a class="navbar-brand" href="{{ path('index') }}"><img src="{{ asset('images/logo.png') }}" alt="image"></a>
+                    {% endblock %}
+                </div>
+
+                {% block header_links %}
+                    <div class="site_information">
+                        <ul>
+                            <li><a href="mailto:exchang@gmail.com"><img src="{{ asset('images/mail_icon.png') }}" alt="#"/>exchang@gmail.com</a>
+                            </li>
+                            <li><a href="tel:exchang@gmail.com"><img src="{{ asset('images/phone_icon.png') }}" alt="#"/>+7123569847</a>
+                            </li>
+                            <li>
+                           {% if app.user %}
+                            <li><a class="join_bt" href="{{ path('app_logout') }}">Deconnexion</a></li> 
+                            {% else %}
+                            <li><a class="join_bt" href="{{ path('app_login') }}">Connexion</a></li>
+                           {% endif %} 
+                           <br/> <br/>
+                           <div class="alert alert-info my-3">
+                              <p>Vous n'avez pas de compte ? <a href="{{ path('app_register') }}">Inscrivez-vous !</a> </p>
+                          </div>
+                            </li>
+                        </ul>
+                    </div>
+                {% endblock %}
+            
+            
+            
+            
+            
+            </div>
+        </div>
+
+    </div>
+    <div class="header_bottom">
+        <div class="container">
+            <div class="col-sm-12 orange">
+                <div class="menu_orange_section">
+                    <nav class="navbar header-nav navbar-expand-lg">
+                        <div class="menu_section">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd"
+                                    aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation { app.session.flashbag.peek('success')|length > 0 ? '' : 'mb-5' }">
+                                          
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                                <ul class="navbar-nav">
+                                    {% block navbar_links %}
+                                        <li><a class="nav-link active" href="{{ path('index') }}">Accueil</a></li>
+                                        <li><a class="nav-link" href="{{ path('article_index') }}">Actualités</a></li>
+                                        <li><a class="nav-link" href="{{ path('contact_new') }}">Contact</a></li>
+                                        <li><a class="nav-link" href="{{ path('offer_index') }}">Offres</a></li>
+
+                                    {% endblock %}
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<!-- Start header -->
+<div class="section first">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+                {% block layout %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
+<!-- Start Footer -->
+  <footer class="footer-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 white_fonts">
+          <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div class="full">
+                <img class="img-responsive"
+                  src="{{ asset('images/footer_logo.png') }}"
+                  alt="#" />
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div class="full">
+                <h3>
+                 Liens rapides
+                </h3>
+              </div>
+              <div class="full">
+                <ul class="menu_footer">
+                  <li><a  href="{{ path('index') }}">> Accueil</a></li>
+                  <li><a  href="{{ path('article_index') }}">> Actualités</a></li>
+                  <li><a  href="{{ path('contact_new') }}">> Contact</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-3">
+              <div class="full">
+                <div class="footer_blog full white_fonts">
+                  <h3>
+                    Contactez nous
+                  </h3>
+                  <ul class="full">
+                    <li>
+                      <img src="images/i5.png" /><span>London 145<br />United Kingdom</span>
+                    </li>
+                    <li>
+                      <img src="images/i6.png" /><span>demo@gmail.com</span>
+                    </li>
+                    <li>
+                      <img src="images/i7.png" /><span>+12586954775</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+ 
+</html>
+

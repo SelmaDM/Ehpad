@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<button class="btn">{{ button_label|default('Enregistrer') }}</button>
+{% if  imgname is defined %}
+<img class="img-responsive" src="{{ asset('uploads/article_imgs/' ~ imgname) }}" alt="#" />
+{% endif %}
+{{ form_end(form) }}

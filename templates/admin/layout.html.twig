@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Administration
+{% endblock %}
+
+{% block logo %}
+  <a class="navbar-brand" href="{{ path('admin') }}">
+    <img src="{{ asset('images/admin_logo.png') }}"
+      style="height: 110px;"
+      alt="image" />
+  </a>
+{% endblock %}
+
+{% block header_links %}
+  <div class="site_information">
+    <ul>
+      <li><a class="join_bt" href="{{ path('index') }}">Voir le site</a></li>
+    </ul>
+  </div>
+{% endblock %}
+
+{% block navbar_links %}
+  <li>
+    <a class="nav-link active" href="{{ path('admin_index1') }}">Actualités</a>
+  </li>
+  <li>
+    <a class="nav-link active" href="{{ path('admin_index') }}"> Contacts </a>
+  </li>
+   <li>
+    <a class="nav-link active" href="{{ path('admin_index2') }}"> Accueil </a>
+  </li>
+   <li>
+    <a class="nav-link active" href="{{ path('user_index') }}"> Utilisateurs </a>
+  </li>
+  <li>
+    <a class="nav-link active" href="{{ path('offer_index1') }}"> Offres </a>
+  </li>
+{% endblock %}
+
+{% block layout %}
+  <!-- Start header -->
+  <div class="section first">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          {% block body %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}
+  Modifier Page d'accueil
+{% endblock %}
+
+{% block body %}
+  <h1>
+    Modifier la page d'accueil
+  </h1>
+
+  {{
+    include(
+      'homepage/_form.html.twig',
+      {
+        button_label: 'Mettre à jour'
+      }
+    )
+  }}
+
+  <a href="{{ path('homepage_index') }}">Retourner à la liste</a>
+
+{% endblock %}

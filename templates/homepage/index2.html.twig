@@ -1,0 +1,52 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}
+  Homepage
+{% endblock %}
+
+{% block body %}
+  <h1>
+    Liste des pages d'accueil
+  </h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Id  </th>
+        <th>Titre </th>
+        <th>Text</th>
+        <th>About </th>
+        <th>actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for homepage in homepages %}
+        <tr>
+          <td>
+            {{ homepage.id }}
+          </td>
+          <td>
+            {{ homepage.title }}
+          </td>
+          <td>
+            {{ homepage.text }}
+          </td>
+          <td>
+            {{ homepage.textAbout }}
+          </td>
+          <td>
+            <a href="{{ path( 'homepage_edit', { id: homepage.id})}}"> Modifier  </a>
+          </td>
+        </tr>
+      {% else %}
+        <tr>
+          <td colspan="5">
+            no records found
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a href="{{ path('homepage_new') }}">Nouvelle Page</a>
+{% endblock %}

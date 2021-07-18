@@ -1,0 +1,13 @@
+{% extends 'espace-agent/layout.html.twig' %}
+
+{% block title %}Edit Souscription{% endblock %}
+
+{% block body %}
+    <h1>Edit Souscription</h1>
+
+    {{ include('souscription/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('souscription_index') }}">back to list</a>
+
+    {{ include('souscription/_delete_form.html.twig') }}
+{% endblock %}

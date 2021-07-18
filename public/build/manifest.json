@@ -1,0 +1,19 @@
+{
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/vendors~app.js": "/build/vendors~app.js",
+  "build/fonts/Flaticon.woff": "/build/fonts/Flaticon.1c5615db.woff",
+  "build/fonts/Flaticon.eot": "/build/fonts/Flaticon.259ec548.eot",
+  "build/fonts/Flaticon.ttf": "/build/fonts/Flaticon.be5f03f6.ttf",
+  "build/fonts/fontawesome-webfont.ttf?v=4.7.0": "/build/fonts/fontawesome-webfont.1e59d233.ttf",
+  "build/fonts/fontawesome-webfont.woff2?v=4.7.0": "/build/fonts/fontawesome-webfont.20fd1704.woff2",
+  "build/fonts/fontawesome-webfont.eot?v=4.7.0": "/build/fonts/fontawesome-webfont.8b43027f.eot",
+  "build/fonts/fontawesome-webfont.woff?v=4.7.0": "/build/fonts/fontawesome-webfont.f691f37e.woff",
+  "build/images/Flaticon.svg": "/build/images/Flaticon.528ff1d7.svg",
+  "build/images/about_bg.png": "/build/images/about_bg.4107a330.png",
+  "build/images/contact_bg.png": "/build/images/contact_bg.d51c2e53.png",
+  "build/images/fontawesome-webfont.svg?v=4.7.0": "/build/images/fontawesome-webfont.c1e38fd9.svg",
+  "build/images/gb.png": "/build/images/gb.4107a330.png",
+  "build/images/slider-01.jpg": "/build/images/slider-01.084788ab.jpg"
+}

@@ -1,0 +1,16 @@
+{% extends 'espace-client/layout.html.twig' %}
+
+{% block title %}
+   Mon profil
+{% endblock %}
+
+
+  {% block layout %}
+</br>
+ <h1> Mon profil </h1>
+  {{include('user/_form.html.twig',{button_label: 'Modifier'})}}
+  {% endblock %}
+
+{% block body %}
+ 
+{% endblock %}

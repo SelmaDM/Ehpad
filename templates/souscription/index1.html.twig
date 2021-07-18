@@ -1,0 +1,35 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block title %}Souscription index{% endblock %}
+
+{% block body %}
+    <h1>Souscription index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Etat</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for souscription in souscriptions %}
+            <tr>
+                <td>{{ souscription.id }}</td>
+                <td>{{ souscription.etat }}</td>
+                <td>
+                    <a href="{{ path('souscription_show', {'id': souscription.id}) }}">show</a>
+                    <a href="{{ path('souscription_edit1', {'id': souscription.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('souscription_new') }}">Create new</a>
+{% endblock %}

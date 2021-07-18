@@ -1,0 +1,31 @@
+{% extends 'public/layout.html.twig' %}
+
+{% block title %}Offer index{% endblock %}
+
+{% block body %}
+    </br>
+    <h1>Liste d'offres </h1>
+    </br>
+
+    <table class="table">
+        
+        <tbody>
+        {% for offer in offers %}
+            <tr>
+                <td>{{ offer.titre }}</td>
+                <td>{{ offer.textintroduction }}</td>
+                <td>{{ offer.prix }}</td>
+                 <td>
+                <a href="{{ path('offer_subscribe', {'id': offer.id}) }}"> Souscrire </a>
+               </td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
